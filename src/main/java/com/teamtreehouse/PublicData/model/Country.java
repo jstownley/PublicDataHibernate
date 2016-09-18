@@ -1,43 +1,33 @@
 package com.teamtreehouse.PublicData.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
 public class Country {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    @Column
     private String code;
 
     @Column
     private String name;
 
     @Column
-    private float internetUsers;
+    private Double internetUsers;
 
     @Column
-    private float adultLiteracyRate;
+    private Double adultLiteracyRate;
 
     // Default constructor for JPA
-    public Country() {}
+    public Country(){}
 
     public Country(CountryBuilder builder) {
-        this.code = builder.code;
         this.name = builder.name;
         this.internetUsers = builder.internetUsers;
         this.adultLiteracyRate = builder.adultLiteracyRate;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getCode() {
         return code;
@@ -55,39 +45,37 @@ public class Country {
         this.name = name;
     }
 
-    public float getInternetUsers() {
+    public Double getInternetUsers() {
         return internetUsers;
     }
 
-    public void setInternetUsers(float internetUsers) {
+    public void setInternetUsers(Double internetUsers) {
         this.internetUsers = internetUsers;
     }
 
-    public float getAdultLiteracyRate() {
+    public Double getAdultLiteracyRate() {
         return adultLiteracyRate;
     }
 
-    public void setAdultLiteracyRate(float adultLiteracyRate) {
+    public void setAdultLiteracyRate(Double adultLiteracyRate) {
         this.adultLiteracyRate = adultLiteracyRate;
     }
 
     public static class CountryBuilder {
-        private String code;
         private String name;
-        private float internetUsers;
-        private float adultLiteracyRate;
+        private Double internetUsers;
+        private Double adultLiteracyRate;
 
-        public CountryBuilder(String name, String code) {
+        public CountryBuilder(String name) {
             this.name = name;
-            this.code = code;
         }
 
-        public CountryBuilder withInternetUsers(float internetUsers) {
+        public CountryBuilder withInternetUsers(Double internetUsers) {
             this.internetUsers = internetUsers;
             return this;
         }
 
-        public CountryBuilder withAdultLiteracyRate(float adultLiteracyRate) {
+        public CountryBuilder withAdultLiteracyRate(Double adultLiteracyRate) {
             this.adultLiteracyRate = adultLiteracyRate;
             return this;
         }

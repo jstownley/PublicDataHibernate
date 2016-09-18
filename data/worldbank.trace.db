@@ -1,0 +1,8 @@
+2016-09-17 15:45:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "AFG" [22018-191]
+2016-09-17 15:52:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "CODE NVARCHAR(3) NOT NULL": "'ac4c28d4-9818-4236-aa22-511cd115a637' (36)"; SQL statement:
+insert into Country (adultLiteracyRate, internetUsers, name, code) values (?, ?, ?, ?) [22001-191]
+2016-09-17 20:15:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "CODE NVARCHAR(3) NOT NULL": "'40288183573add1c01573add39ff0000' (32)"; SQL statement:
+insert into Country (adultLiteracyRate, internetUsers, name, code) values (?, ?, ?, ?) [22001-191]
